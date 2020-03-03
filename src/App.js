@@ -5,20 +5,17 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <header className="App-header">        
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          ID Code Helper
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
       </header>
+      <body className="App-body">  
+        This helper will walk you through creating an ID number system for like inventory numbers, control numbers, serial numbers, and more.<br /><br />
+        After configuring the layout, it'll return a JavaScript funtion that you can put in your web app or Google Sheets scripts.
+      <button className="App-proceed-button">Start</button>
+      </body>       
     </div>
   );
 }

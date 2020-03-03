@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300|Raleway:300&display=swap');
+
 .App {
   text-align: center;
 }
@@ -15,17 +17,54 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'Raleway';
+  font-weight: lighter;
+  font-size: calc(20px + 3vmin);
+  color: white;
+}
+
+.App-body {
+  background-color: #282c34;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato';
+  font-weight: lighter;
+  padding: 20px;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+  font-family: 'Raleway', ;
+  font-weight: bold;
+}
+
+.App-proceed-button {
+  margin:25px;
+  width:200px;
+  height:50px;
+  border-radius:25px;
+  border: 0px solid;
+  font-family: 'Raleway';
+  font-weight: bold;
+  text-transform:uppercase;
+  transition: border-radius 0.5s, width 0.5s;
+  color: black;
+  background-color:#ff794d;
+}
+
+button:hover{
+  border-radius:15px;
+  width:220px;
 }
 
 @keyframes App-logo-spin {
