@@ -1,23 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App() {  
   return (
     <div className="App">
-      <header className="App-header">        
-        <p>
-          ID Code Helper
-        </p>
-        
-      </header>
-      <body className="App-body">  
-        This helper will walk you through creating an ID number system for like inventory numbers, control numbers, serial numbers, and more.<br /><br />
-        After configuring the layout, it'll return a JavaScript funtion that you can put in your web app or Google Sheets scripts.
-      <button className="App-proceed-button">Start</button>
-      </body>       
+      <table className="App-main">
+        <header className="App-header">        
+          <p>
+            ID Code Helper
+          </p>
+          
+        </header>
+        <body className="App-body">  
+          <table className="App-content-table">
+            This helper will walk you through creating an ID number system for inventory numbers, control numbers, serial numbers, and more.
+            <br /><br />
+            After configuring the layout, it'll provide a JavaScript function that you can use in your web app or Google Sheets scripts for automatically generating new codes.
+            <br /><br />
+            <button className="App-proceed-button">Start</button>
+          </table>
+        </body> 
+        <footer className="App-footer">
+          Noah Butcher | <a 
+          href= "https://github.com/NoahButcher/id-code-helper"
+          className="App-link">          
+            https://github.com/NoahButcher/id-code-helper
+            </a>
+        </footer>   
+      </table>   
     </div>
   );
 }
+
+
 
 export default App;
