@@ -89,6 +89,11 @@
   background-color:#ff4e14;
 }
 
+.App-proceed-button:focus{
+  outline: none;  
+  box-shadow: 0px 1px 5px #000000;
+}
+
 button:hover{
   border-radius:15px;
   width:220px;

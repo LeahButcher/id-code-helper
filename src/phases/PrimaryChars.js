@@ -7,11 +7,7 @@ function PrimaryChars(){
             An ID number usually should start with letters rather than numbers.
         <br /><br />
             How many letters would you like your ID convention to use?
-        <br /><br />
-            <button
-                className="App-proceed-button">
-                Start
-        </button>
+        <br /><br />            
         </div> 
     );
 }
