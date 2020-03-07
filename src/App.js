@@ -3,6 +3,8 @@ import ReactDOM from "react-dom"
 import './App.css';
 import Home from './phases/Home'
 import PrimaryChars from './phases/PrimaryChars'
+import SecondaryChars from './phases/SecondaryChars';
+import Digits from './phases/Digits';
 
 
 class App extends Component { 
@@ -26,6 +28,14 @@ class App extends Component {
         this.setState({ phase: "PrimaryChars" })
         break;
       case "PrimaryChars":
+        this.setState({ output: <SecondaryChars /> })
+        this.buttonRef.textContent="Next"
+        this.setState({ phase: "SecondaryChars" })
+        break;
+      case "SecondaryChars":
+        this.setState({ output: <Digits /> })
+        this.buttonRef.textContent="Next"
+        this.setState({ phase: "Digits" })
         break;
       default:
         break
