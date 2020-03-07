@@ -11,8 +11,11 @@ class PrimaryChars extends Component {
       }
 
     CheckInput(){
-        if (this.inputRef<0||this.inputRef>5){
-            
+        if (this.inputRef.value<0){
+            this.inputRef.value = 0
+        }
+        if (this.inputRef.value>5){
+            this.inputRef.value = 5
         }
     }
 
@@ -29,6 +32,7 @@ class PrimaryChars extends Component {
                     type="Number"
                     id="charQty"
                     name="charQty"
+                    defaultValue="1"
                     ref={(ele) => this.inputRef = ele}
                     onInput={this.CheckInput}
                     min="0"
