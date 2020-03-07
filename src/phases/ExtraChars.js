@@ -22,9 +22,9 @@ class ExtraChars extends Component {
     render() {
         return (
             <div className="App-content-table">
-                An ID number usually should start with letters rather than numbers.
+                You can extend your IDs with optional extra characters if you want to differentiate an item by a certain property.
             <br /><br />
-                How many letters would you like your ID convention to use? <br />
+                How many extra characters would you like to append to your ID convention when needed? <br />
                 (Choose a number between 0 and 5)
             <br /><br />
                 <input
