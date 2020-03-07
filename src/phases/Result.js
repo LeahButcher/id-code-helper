@@ -12,7 +12,7 @@ class Result extends Component {
     render() {
         return (
             <div className="App-content-table">
-                That's all! Here's your JavaScript function:
+                Here's your JavaScript function:
             <br /><br />
                 
             <br /><br />

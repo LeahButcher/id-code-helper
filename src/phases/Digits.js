@@ -22,7 +22,7 @@ class Digits extends Component {
     render() {
         return (
             <div className="App-content-table">
-                Now you'll need to consider the amount of items per letter and/or subcategory you expect.
+                Now you'll need to consider the largest amount of items in a given category and/or subcategory you'll have.
             <br /><br />
                 How many digits do you need your ID convention to hold? Unused digit places will be zeroes. <br />
                 (Choose a number between 2 and 12)
@@ -35,8 +35,8 @@ class Digits extends Component {
                     defaultValue="5"
                     ref={(ele) => this.inputRef = ele}
                     onInput={this.CheckInput}
-                    min="0"
-                    max="3">
+                    min="2"
+                    max="12">
                 </input>
                 <br /><br />
             </div>
