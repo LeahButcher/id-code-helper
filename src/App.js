@@ -6,7 +6,7 @@ import PrimaryChars from './phases/PrimaryChars'
 import SecondaryChars from './phases/SecondaryChars';
 import Digits from './phases/Digits';
 import ExtraChars from './phases/ExtraChars';
-
+import Result from './phases/Result';
 
 class App extends Component { 
 
@@ -42,6 +42,16 @@ class App extends Component {
         this.setState({ output: <ExtraChars /> })
         this.buttonRef.textContent="Next"
         this.setState({ phase: "ExtraChars" })
+        break;
+      case "ExtraChars":
+        this.setState({ output: <Result /> })
+        this.buttonRef.textContent="Restart"
+        this.setState({ phase: "Result" })
+        break;
+      case "Result":
+        this.setState({ output: <Home /> })
+        this.buttonRef.textContent = "Start"
+        this.setState({ phase: "Home" })
         break;
       default:
         break
