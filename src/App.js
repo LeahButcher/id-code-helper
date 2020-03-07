@@ -27,6 +27,8 @@ class App extends Component {
         break;
       case "PrimaryChars":
         break;
+      default:
+        break
     }
   }
 
