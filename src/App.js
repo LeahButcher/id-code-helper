@@ -14,7 +14,8 @@ class App extends Component {
     super()
     this.state = ({
       output: (<Home />),
-      phase: "Home",           
+      phase: "Home",   
+      priChars: ""        
     })
     this.ProceedButtonClick=this.ProceedButtonClick.bind(this)
   }
@@ -64,6 +65,11 @@ class App extends Component {
     }
   }
 
+  priCharsCallback = (data) => {    
+    this.setState({priChars: data})
+    console.log(this.state.priChars)
+  }
+
   render() {
     return (
       <div className="App">
@@ -81,6 +87,14 @@ class App extends Component {
               onClick={this.ProceedButtonClick}>
               Start
             </button>
+          </div>
+
+          <div>
+              <PrimaryChars parentCallback ={this.priCharsCallback} />
+              <div>
+                {this.state.priChars}
+              </div>
+
           </div>
           
           <footer className="App-footer">

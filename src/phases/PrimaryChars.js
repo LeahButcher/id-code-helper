@@ -5,19 +5,31 @@ class PrimaryChars extends Component {
     constructor(){
         super()
         this.state = ({
-                    
+            minimum: 0,
+            maximum: 5
         })
         this.CheckInput=this.CheckInput.bind(this)
+        this.sendData=this.sendData.bind(this)
       }
 
+    sendData(){        
+        let num = this.props.parentCallback(this.inputRef.value);
+        let result = ""
+        for (var i = this.state.minimum; i < num;i++){
+            result = result + "A"
+        }
+    }
+
     CheckInput(){
-        if (this.inputRef.value<0){
-            this.inputRef.value = 0
+        if (this.inputRef.value<this.state.minimum){
+            this.inputRef.value = this.state.minimum
         }
         if (this.inputRef.value>5){
             this.inputRef.value = 5
-        }
+        }        
+        this.sendData()
     }
+    
 
     render() {
         return (
@@ -41,6 +53,7 @@ class PrimaryChars extends Component {
                 <br /><br />
             </div>
         );
+        
     }
 }
 export default PrimaryChars
