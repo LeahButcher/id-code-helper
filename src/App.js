@@ -24,7 +24,7 @@ class App extends Component {
     console.log("Proceed button clicked!")
     switch (this.state.phase) {
       case "Home":
-        this.setState({ output: <PrimaryChars /> })
+        this.setState({ output: <PrimaryChars parentCallback ={this.priCharsCallback} /> })
         // this.buttonRef.hidden=true
         this.buttonRef.textContent="Next"
         this.headerRef.textContent="How will your ID convention start?"
@@ -80,22 +80,19 @@ class App extends Component {
           </header>
 
           <div className="App-body">
-            {this.state.output}            
+            {this.state.output} 
+            <div className="App-example">                  
+                {this.state.priChars}                  
+            </div>           
             <button
               ref={(ele) => this.buttonRef = ele}
               className="App-proceed-button"
               onClick={this.ProceedButtonClick}>
               Start
-            </button>
+            </button>             
           </div>
 
-          <div>
-              <PrimaryChars parentCallback ={this.priCharsCallback} />
-              <div>
-                {this.state.priChars}
-              </div>
-
-          </div>
+          
           
           <footer className="App-footer">
             Noah Butcher | <a

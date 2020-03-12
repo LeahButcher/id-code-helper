@@ -57,6 +57,10 @@
   width:calc(100px + 60vw);
 }
 
+.App-example{
+  color:white;
+}
+
 .App-footer{
   font-family: 'Lato';
   font-size: calc(10px + 0.5vmin);
