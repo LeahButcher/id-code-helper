@@ -5,22 +5,42 @@ class PrimaryChars extends Component {
     constructor(){
         super()
         this.state = ({
-                    
+            minimum: 0,
+            maximum: 5,
+            default: 1,
+            defaultExample:"Current Layout: A"
         })
         this.CheckInput=this.CheckInput.bind(this)
+        this.sendData=this.sendData.bind(this)
       }
 
+    
+
     CheckInput(){
-        if (this.inputRef.value<0){
-            this.inputRef.value = 0
+        if (this.inputRef.value<this.state.minimum){
+            this.inputRef.value = this.state.minimum
         }
         if (this.inputRef.value>5){
             this.inputRef.value = 5
-        }
+        }        
+        this.sendData()
+    }
+    sendData = () => {        
+        let num = this.inputRef.value;
+        let result = "Current Layout: "
+        for (var i = this.state.minimum; i < num;i++){
+            result = result + "A"            
+        }             
+        this.props.parentCallback(result)
     }
 
-    render() {
+    componentDidMount(){
+        this.props.parentCallback(this.state.defaultExample)
+    }
+
+    render() {        
         return (
+            
             <div className="App-content-table">
                 An ID number usually should start with letters rather than numbers.
             <br /><br />
@@ -41,6 +61,7 @@ class PrimaryChars extends Component {
                 <br /><br />
             </div>
         );
+        
     }
 }
 export default PrimaryChars
