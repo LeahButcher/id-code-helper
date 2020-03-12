@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const minimum = 0;
 const maximum = 5;
 const defaultNumber = 1;
-const defaultExample = "Current Layout: A";
+const defaultExample = "A";
 
 class PrimaryChars extends Component { 
     
@@ -29,7 +29,7 @@ class PrimaryChars extends Component {
     }
     sendData = () => {        
         let num = this.inputRef.value;
-        let result = "Current Layout: "
+        let result = ""
         for (var i = minimum; i < num;i++){
             result = result + "A"            
         }             
