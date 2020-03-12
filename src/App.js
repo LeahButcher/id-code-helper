@@ -17,7 +17,8 @@ class App extends Component {
       phase: "Home",   
       priChars: "",
       secChars: "",
-      digs:""
+      digs:"",
+      exChars:""
     })
     this.ProceedButtonClick=this.ProceedButtonClick.bind(this)
   }
@@ -45,7 +46,7 @@ class App extends Component {
         this.setState({ phase: "Digits" })
         break;
       case "Digits":
-        this.setState({ output: <ExtraChars /> })
+        this.setState({ output: <ExtraChars ECCallback ={this.exCharsCallback} /> })
         this.buttonRef.textContent="Next"
         this.headerRef.textContent="Will you need additional characters?"
         this.setState({ phase: "ExtraChars" })
@@ -61,7 +62,7 @@ class App extends Component {
         this.buttonRef.textContent = "Start"
         this.headerRef.textContent="ID Code Helper"
         this.setState({ phase: "Home" })
-        this.setState({priChars:"",secChars:"",digs:""})
+        this.setState({priChars:"",secChars:"",digs:"",exChars:""})
         break;
       default:
         break
@@ -77,6 +78,9 @@ class App extends Component {
   dCallback = (data) => {    
     this.setState({digs: data})
   }
+  exCharsCallback = (data) => {    
+    this.setState({exChars: data})
+  }
 
   render() {
     return (
@@ -90,7 +94,7 @@ class App extends Component {
           <div className="App-body">
             {this.state.output} 
             <div className="App-example">                  
-                {this.state.priChars+this.state.secChars+this.state.digs}                  
+                {this.state.priChars+this.state.secChars+this.state.digs+this.state.exChars}                  
             </div>           
             <button
               ref={(ele) => this.buttonRef = ele}
@@ -100,8 +104,6 @@ class App extends Component {
             </button>             
           </div>
 
-          
-          
           <footer className="App-footer">
             Noah Butcher | <a
               href="https://github.com/NoahButcher/id-code-helper"
