@@ -16,7 +16,8 @@ class App extends Component {
       output: (<Home />),
       phase: "Home",   
       priChars: "",
-      secChars: ""        
+      secChars: "",
+      digs:""
     })
     this.ProceedButtonClick=this.ProceedButtonClick.bind(this)
   }
@@ -38,7 +39,7 @@ class App extends Component {
         this.setState({ phase: "SecondaryChars" })
         break;
       case "SecondaryChars":
-        this.setState({ output: <Digits /> })
+        this.setState({ output: <Digits DCallback ={this.dCallback} /> })
         this.buttonRef.textContent="Next"
         this.headerRef.textContent="How many numbers will you need?"
         this.setState({ phase: "Digits" })
@@ -60,6 +61,7 @@ class App extends Component {
         this.buttonRef.textContent = "Start"
         this.headerRef.textContent="ID Code Helper"
         this.setState({ phase: "Home" })
+        this.setState({priChars:"",secChars:"",digs:""})
         break;
       default:
         break
@@ -68,11 +70,12 @@ class App extends Component {
 
   priCharsCallback = (data) => {    
     this.setState({priChars: data})
-    console.log(this.state.priChars)
   }
   secCharsCallback = (data) => {    
     this.setState({secChars: data})
-    console.log(this.state.secChars)
+  }
+  dCallback = (data) => {    
+    this.setState({digs: data})
   }
 
   render() {
@@ -87,7 +90,7 @@ class App extends Component {
           <div className="App-body">
             {this.state.output} 
             <div className="App-example">                  
-                {this.state.priChars+this.state.secChars}                  
+                {this.state.priChars+this.state.secChars+this.state.digs}                  
             </div>           
             <button
               ref={(ele) => this.buttonRef = ele}
