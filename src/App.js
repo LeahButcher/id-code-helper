@@ -15,7 +15,8 @@ class App extends Component {
     this.state = ({
       output: (<Home />),
       phase: "Home",   
-      priChars: ""        
+      priChars: "",
+      secChars: ""        
     })
     this.ProceedButtonClick=this.ProceedButtonClick.bind(this)
   }
@@ -24,14 +25,14 @@ class App extends Component {
     console.log("Proceed button clicked!")
     switch (this.state.phase) {
       case "Home":
-        this.setState({ output: <PrimaryChars parentCallback ={this.priCharsCallback} /> })
+        this.setState({ output: <PrimaryChars PCCallback ={this.priCharsCallback} /> })
         // this.buttonRef.hidden=true
         this.buttonRef.textContent="Next"
         this.headerRef.textContent="How will your ID convention start?"
         this.setState({ phase: "PrimaryChars" })
         break;
       case "PrimaryChars":
-        this.setState({ output: <SecondaryChars /> })
+        this.setState({ output: <SecondaryChars SCCallback ={this.secCharsCallback} /> })
         this.buttonRef.textContent="Next"
         this.headerRef.textContent="Will you have subcategories?"
         this.setState({ phase: "SecondaryChars" })
@@ -69,6 +70,10 @@ class App extends Component {
     this.setState({priChars: data})
     console.log(this.state.priChars)
   }
+  secCharsCallback = (data) => {    
+    this.setState({secChars: data})
+    console.log(this.state.secChars)
+  }
 
   render() {
     return (
@@ -82,7 +87,7 @@ class App extends Component {
           <div className="App-body">
             {this.state.output} 
             <div className="App-example">                  
-                {this.state.priChars}                  
+                {this.state.priChars+this.state.secChars}                  
             </div>           
             <button
               ref={(ele) => this.buttonRef = ele}

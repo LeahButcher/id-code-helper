@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
+const minimum = 0;
+const maximum = 5;
+const defaultNumber = 1;
+const defaultExample = "Current Layout: A";
+
 class PrimaryChars extends Component { 
     
     constructor(){
         super()
-        this.state = ({
-            minimum: 0,
-            maximum: 5,
-            default: 1,
-            defaultExample:"Current Layout: A"
+        this.state = ({                        
+            
         })
         this.CheckInput=this.CheckInput.bind(this)
         this.sendData=this.sendData.bind(this)
@@ -17,25 +19,25 @@ class PrimaryChars extends Component {
     
 
     CheckInput(){
-        if (this.inputRef.value<this.state.minimum){
-            this.inputRef.value = this.state.minimum
+        if (this.inputRef.value < minimum){
+            this.inputRef.value = minimum
         }
-        if (this.inputRef.value>5){
-            this.inputRef.value = 5
+        if (this.inputRef.value > maximum){
+            this.inputRef.value = maximum
         }        
         this.sendData()
     }
     sendData = () => {        
         let num = this.inputRef.value;
         let result = "Current Layout: "
-        for (var i = this.state.minimum; i < num;i++){
+        for (var i = minimum; i < num;i++){
             result = result + "A"            
         }             
-        this.props.parentCallback(result)
+        this.props.PCCallback(result)
     }
 
     componentDidMount(){
-        this.props.parentCallback(this.state.defaultExample)
+        this.props.PCCallback(defaultExample)
     }
 
     render() {        
@@ -52,11 +54,11 @@ class PrimaryChars extends Component {
                     type="Number"
                     id="charQty"
                     name="charQty"
-                    defaultValue="1"
+                    defaultValue={defaultNumber}
                     ref={(ele) => this.inputRef = ele}
                     onInput={this.CheckInput}
-                    min="0"
-                    max="5">
+                    min={minimum}
+                    max={maximum}>
                 </input>
                 <br /><br />
             </div>

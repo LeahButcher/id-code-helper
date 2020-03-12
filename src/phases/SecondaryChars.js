@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 
+const minimum = 0;
+const maximum = 3;
+const defaultNumber = 0;
+const defaultExample = "";
+
 class SecondaryChars extends Component { 
     
     constructor(){
@@ -8,15 +13,29 @@ class SecondaryChars extends Component {
                     
         })
         this.CheckInput=this.CheckInput.bind(this)
+        this.sendData=this.sendData.bind(this)
       }
 
     CheckInput(){
-        if (this.inputRef.value<0){
-            this.inputRef.value = 0
+        if (this.inputRef.value < minimum){
+            this.inputRef.value = minimum
         }
-        if (this.inputRef.value>3){
-            this.inputRef.value = 3
+        if (this.inputRef.value > maximum){
+            this.inputRef.value = maximum
         }
+        this.sendData()
+    }
+    sendData = () => {        
+        let num = this.inputRef.value;
+        let result = ""
+        for (var i = minimum; i < num;i++){
+            result = result + "B"            
+        }             
+        this.props.SCCallback(result)
+    }
+
+    componentDidMount(){
+        this.props.SCCallback(defaultExample)
     }
 
     render() {
@@ -32,11 +51,11 @@ class SecondaryChars extends Component {
                     type="Number"
                     id="charQty"
                     name="charQty"
-                    defaultValue="0"
+                    defaultValue={defaultNumber}
                     ref={(ele) => this.inputRef = ele}
                     onInput={this.CheckInput}
-                    min="0"
-                    max="3">
+                    min={minimum}
+                    max={maximum}>
                 </input>
                 <br /><br />
             </div>
