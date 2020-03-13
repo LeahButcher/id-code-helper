@@ -31,10 +31,18 @@ function Result(props){
     console.log(props.sec.length)
     console.log(props.dig.length)
     console.log(props.ext.length)
-    let codeOutput = (
-        <div className="App-code-output">
-            {"function GenerateID("}      
-        </div>
+    var primary = props.pri.length ? "primary" : ""
+    var ps = primary ? ", " : ""
+    var secondary = props.sec.length ? "secondary" : ""
+    var sd = secondary ? ", " : ""
+    var digits = props.dig.length ? "digits" : ""
+    var extra = props.ext.length ? ", extra" : ""
+
+    var codeOutput = (
+        <pre className="App-code-output">
+            {"function GenerateID("+primary+ps+secondary+sd+digits+extra+"){"}<br/>            
+            {'  '}
+        </pre>
         )
 
         return (
@@ -42,8 +50,9 @@ function Result(props){
                 Here's your JavaScript function:
                 <br /><br />
                 {codeOutput}
-                <br /><br />
+                <br />
                 {/* Add copy button */}
+                <br /><br />
             </div>
         );
 }
