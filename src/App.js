@@ -118,10 +118,10 @@ class App extends Component {
           </div>
 
           <footer className="App-footer">
-            Noah Butcher | <a
-              href="https://github.com/NoahButcher/id-code-helper"
+            Leah Butcher | <a
+              href="https://github.com/LeahButcher/id-code-helper"
               className="App-link">
-              https://github.com/NoahButcher/id-code-helper
+              https://github.com/LeahButcher/id-code-helper
             </a>
           </footer>
         </div>
