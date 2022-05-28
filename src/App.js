@@ -118,7 +118,15 @@ class App extends Component {
           </div>
 
           <footer className="App-footer">
-            Leah Butcher | <a
+            Leah Butcher
+            {" | "} 
+            <a
+              href="https://leahbutcher.com"
+              className="App-link"> 
+              My Portfolio
+            </a>
+            {" | "} 
+            <a
               href="https://github.com/LeahButcher/id-code-helper"
               className="App-link">
               https://github.com/LeahButcher/id-code-helper

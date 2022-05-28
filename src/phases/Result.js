@@ -27,21 +27,40 @@ import React from 'react';
 
 function Result(props){
     
-    console.log(props.pri.length)
-    console.log(props.sec.length)
-    console.log(props.dig.length)
-    console.log(props.ext.length)
+    // Determine the parameters of the function
     var primary = props.pri.length ? "primary" : ""
     var ps = primary ? ", " : ""
     var secondary = props.sec.length ? "secondary" : ""
     var sd = secondary ? ", " : ""
     var digits = props.dig.length ? "digits" : ""
     var extra = props.ext.length ? ", extra" : ""
+    
+    /* Determine the content of the function */
+    // Create primary variable if needed
+    var primaryJS = primary ? 
+        (<div>
+            {'    '+
+            "var pri = primary.toString().substring(0,"+
+            props.pri.length+");"}<br/> 
+            </div>) 
+        : ""
+    console.log("primary js = "+primary)
+    // Create secondary variable if needed
+    var secondaryJS = secondary ? 
+        (<div>
+            {'    '+
+            "var sec = secondary.toString().substring(0,"+
+            props.sec.length+");"}<br/> 
+            </div>) 
+        : ""
+    console.log("primary js = "+primary)
 
     var codeOutput = (
         <pre className="App-code-output">
             {"function GenerateID("+primary+ps+secondary+sd+digits+extra+"){"}<br/>            
-            {'  '}
+            {primaryJS}
+            {secondaryJS}
+            {"}"}
         </pre>
         )
 

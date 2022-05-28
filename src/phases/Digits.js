@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
 const minimum = 2;
-const maximum = 12;
+const maximum = 16;
 const defaultNumber = 5;
 const defaultExample = "#####";
+const minPlaceholder = "##";
 
 class Digits extends Component { 
     
@@ -26,7 +27,7 @@ class Digits extends Component {
     }
     sendData = () => {        
         let num = this.inputRef.value;
-        let result = ""
+        let result = minPlaceholder;
         for (var i = minimum; i < num;i++){
             result = result + "#"            
         }             
@@ -43,7 +44,7 @@ class Digits extends Component {
                 Now you'll need to consider the largest amount of items in a given category and/or subcategory you'll have.
             <br /><br />
                 How many digits do you need your ID convention to hold? Unused digit places will be zeroes. <br />
-                (Choose a number between 2 and 12)
+                (Choose a number between 2 and 16)
             <br /><br />
                 <input
                     className="Input-qty"

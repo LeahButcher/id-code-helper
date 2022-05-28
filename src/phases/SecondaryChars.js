@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const minimum = 0;
-const maximum = 3;
+const maximum = 4;
 const defaultNumber = 0;
 const defaultExample = "";
 
@@ -44,7 +44,7 @@ class SecondaryChars extends Component {
                 You can add secondary characters or numbers for uses such as subcategories or adding the year to the ID.
             <br /><br />
                 How many secondary characters would you like your ID convention to use? <br />
-                (Choose a number between 0 and 3)
+                (Choose a number between 0 and 4)
             <br /><br />
                 <input
                     className="Input-qty"
