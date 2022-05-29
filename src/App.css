@@ -129,9 +129,15 @@ input:focus{
   font-family: 'Fira Code', monospace;
   color:#bdbdbd;
   background-color: #252525;
+  overflow-wrap: break-word; 
 }
 
 .App-explanation{
   font-size: 12px;
 }
 
+.App-unique-IDs{
+  font-size: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

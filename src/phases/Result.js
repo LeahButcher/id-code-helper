@@ -33,14 +33,14 @@ function Result(props){
         Math.pow(10,props.dig.length) -1;
     /* Calculate number of IDs per category and subcategory */
     /* Calculate number of extra numbers */
-    var extraIDs = props.ext.length ? Math.pow(36,props.ext.length)+" optional characters per ID" : "No extra characters";
+    var extraIDs = props.ext.length ? " (Up to " + Math.pow(36,props.ext.length)*uniqueIDs+" with optional characters)" : "";
 
     // Determine the parameters of the function
     var primary = props.pri.length ? "primary" : ""
     var ps = primary ? ", " : ""
     var secondary = props.sec.length ? "secondary" : ""
     var sd = secondary ? ", " : ""
-    var digits = props.dig.length ? "number" : ""
+    var digits = props.dig.length ? "previousNumber" : ""
     var extra = props.ext.length ? ", extra" : ""
     
     /* Determine the content of the function */
@@ -66,7 +66,9 @@ function Result(props){
     var digitsJS = digits ? 
     (<div>
         {'    '+
-        "var num = '000000000000000' + number;"}<br/> 
+        "var num = previousNumber + 1;"}<br/> 
+        {'    '+
+        "num = '000000000000000' + num;"}<br/> 
         {'    '+
         "num = num.substr(num.length-"+props.dig.length+");"}<br/> 
         </div>) 
@@ -75,6 +77,7 @@ function Result(props){
 
     var codeOutput = (
         <pre className="App-code-output">
+            {"/* Creates an ID based strings and previous numbers fed to the function */"}<br/> 
             {"function GenerateID("+primary+ps+secondary+sd+digits+extra+"){"}<br/>            
             {primaryJS}
             {secondaryJS}
@@ -87,18 +90,19 @@ function Result(props){
             <div className="App-content-table">
                 Number of unique IDs possible:*
                 <br />
-                <b>{uniqueIDs}</b> + {extraIDs}
-                <br /><br />
+                <div className="App-unique-IDs">
+                <b>{uniqueIDs}</b>{extraIDs}
+                </div>
                 <div className="App-explanation">
                     *based on 26 primary characters ({props.pri.length}), 36 secondary characters({props.sec.length}), and 10 digits({props.dig.length}) + 36 optional characters ({props.ext.length})
                 </div>
-                <br /><br />
+                <br />
                 Here's your JavaScript function:
                 <br /><br />
                 {codeOutput}
                 <br />
                 {/* Add copy button */}
-                <br /><br />
+                <br />
             </div>
         );
 }
