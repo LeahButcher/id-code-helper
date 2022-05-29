@@ -54,7 +54,7 @@
 }
 
 .App-content-table{
-  width:calc(100px + 60vw);
+  width:calc(100px + 70vw);
 }
 
 .App-example{
@@ -125,11 +125,15 @@ input:focus{
   border-radius: 25px;
   padding:10px;
   font-size: 14px;
-  text-align:left;;
+  display:inline-block;
+  text-align:left;
   font-family: 'Fira Code', monospace;
   color:#bdbdbd;
   background-color: #252525;
-  overflow-wrap: break-word; 
+  width: 80%; 
+  max-width:fit-content;
+  min-width: none;
+  overflow: auto; 
 }
 
 .App-explanation{

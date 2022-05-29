@@ -41,7 +41,7 @@ function Result(props){
     var secondary = props.sec.length ? "secondary" : ""
     var sd = secondary ? ", " : ""
     var digits = props.dig.length ? "previousNumber" : ""
-    var extra = props.ext.length ? ", extra" : ""
+    var extra = props.ext.length ? ", optional" : ""
     
     /* Determine the content of the function */
     // Create primary variable if needed
@@ -63,16 +63,30 @@ function Result(props){
         : ""
 
      // Create digits variable
+    var digitZeroes = "";
+    for (var i = 0; i < props.dig.length; i++){
+        digitZeroes = digitZeroes+"0";
+    } 
     var digitsJS = digits ? 
     (<div>
         {'    '+
-        "var num = previousNumber + 1;"}<br/> 
-        {'    '+
-        "num = '000000000000000' + num;"}<br/> 
+        "var num = '"+digitZeroes+"' + (previousNumber + 1);"}<br/> 
         {'    '+
         "num = num.substr(num.length-"+props.dig.length+");"}<br/> 
         </div>) 
     : ""
+
+    // Create optional variable if needed
+    var optionalJS = extra ? 
+        (<div>
+            {'    '+
+            'if (optional != null){'}<br/> 
+            {'    '+'    '+
+            "var opt = optional.toString().toUpperCase().substring(0,"+
+            props.ext.length+");"}<br/>
+            {'    }'}<br/>
+            </div>) 
+        : ""
 
 
     var codeOutput = (
@@ -82,6 +96,7 @@ function Result(props){
             {primaryJS}
             {secondaryJS}
             {digitsJS}
+            {optionalJS}
             {"}"}
         </pre>
         )
