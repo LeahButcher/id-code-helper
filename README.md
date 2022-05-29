@@ -29,4 +29,6 @@ If you select 5 digits, and an item is the 57th item in a category or subcategor
 Optional characters can be appended on the end of your ID code. These characters are great for inventory items that may come with alternate colors or configurations, while other items may only have one color or configuration.
 
 Following the previous example, if you selected 1 optional character, and the 57th computer in your electronics inventory came in grey and white, you could feed in those words to the 
-"optional" parameter to get ECOMP00057G and ECOMP00057W.
+"optional" parameter to get ECOMP00057G and ECOMP00057W. 
+
+This ABBBB#####C ID format in the example above has a total of 4367001599999 possible unique IDs, and up to 157212057599964 possible unique ID if optional characters, though that is only if every possible character combination was used.
