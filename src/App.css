@@ -131,3 +131,7 @@ input:focus{
   background-color: #252525;
 }
 
+.App-explanation{
+  font-size: 12px;
+}
+
