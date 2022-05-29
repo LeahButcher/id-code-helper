@@ -44,7 +44,10 @@ class PrimaryChars extends Component {
         return (
             
             <div className="App-content-table">
-                An ID number usually should start with letters rather than numbers.
+                An ID number usually should start with letters rather than numbers. 
+                This prevents formatting issues with proceeding zeroes when entered into a spreadsheet,
+                enables the use of alphabetical categories for different sets of numbers,
+                and provides 26 potential characters per space vs 10 for numbers.
             <br /><br />
                 How many letters would you like your ID convention to use? <br />
                 (Choose a number between 0 and 5)

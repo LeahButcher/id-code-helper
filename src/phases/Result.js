@@ -109,7 +109,7 @@ function Result(props){
                 <b>{uniqueIDs}</b>{extraIDs}
                 </div>
                 <div className="App-explanation">
-                    *based on 26 primary characters ({props.pri.length}), 36 secondary characters({props.sec.length}), and 10 digits({props.dig.length}) + 36 optional characters ({props.ext.length})
+                    *based on 26 primary characters ({props.pri.length}), 36 secondary characters ({props.sec.length}), 10 digits ({props.dig.length}), and 36 optional characters ({props.ext.length})
                 </div>
                 <br />
                 Here's your JavaScript function:
