@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ID Code Helper
 
-## Available Scripts
+A simple React, JS, CSS, and HTML project, ID Code Helper was made to simplify the process of creating ID numbers with JavaScript. Featuring a step-by-step walkthrough for designing an ID code template, it guides users toward creating a number system that can fit their needs. 
 
-In the project directory, you can run:
+Once a user has designated the format they want their ID codes to be in, the app instantly crafts a JavaScript function with which can be used to generate ID codes with whatever data the user passes to it. The app also provides the total potential unique IDs that can be generated with the template that the user chose.
 
-### `npm start`
+Below are the pieces of the template and their explanations, with an inventory management system being the use-case for examples.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Primary Characters
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Primary characters are the first placeholders in the ID template. It is best to choose alphabetical characters to start ID codes, as it prevents formatting issues with proceeding zeroes when entered into a spreadsheet, enables the use of alphabetical categories for different sets of numbers, and provides 26 potential characters per space vs 10 for numbers.
 
-### `npm test`
+You can think of primary characters as the "category" for your ID codes. For example, this could be "Electronics" - feeding that word into the function after selecting 1 primary character in the app would return the result of "E" to start your ID code off.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Secondary Characters
 
-### `npm run build`
+Secondary characters work similar to primary characters, with the addition of being able to be numerical, increasing the potential characters per space to 36. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You can think of secondary characters as the "subcategory" for your ID codes. Following the previous example of "Electronics" for the primary category, the subcategory could be "Computers" - feeding that word into the function after selecting 4 secondary characters in the app would return the result of "COMP". Having that under the Electronics category in the previous example would show "ECOMP" at the start of your ID code.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Digits
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Digits enable you to quantify the number of records per category (or subcategory, if used). Unused digits will have placeholder zeroes.
 
-### `npm run eject`
+If you select 5 digits, and an item is the 57th item in a category or subcategory, the digits in the ID code would appear as "00057". Following the previous example, the 57th record of a laptop in your inventory of electronics would be "ECOMP00057".
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Optional Characters
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Optional characters can be appended on the end of your ID code. These characters are great for inventory items that may come with alternate colors or configurations, while other items may only have one color or configuration.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Following the previous example, if you selected 1 optional character, and the 57th computer in your electronics inventory came in grey and white, you could feed in those words to the 
+"optional" parameter to get ECOMP00057G and ECOMP00057W.
