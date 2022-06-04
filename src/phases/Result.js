@@ -81,7 +81,7 @@ function Result(props){
         (<div>
             {'    '+
             'if (optional != null){'}<br/> 
-            {'    '+'    '+
+            {'        '+
             "var opt = optional.toString().toUpperCase().substring(0,"+
             props.ext.length+");"}<br/>
             {'    }'}<br/>
