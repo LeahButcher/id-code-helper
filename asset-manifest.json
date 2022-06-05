@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/id-code-helper/static/css/main.55ea44f0.css",
+    "main.js": "/id-code-helper/static/js/main.420de2c7.js",
+    "index.html": "/id-code-helper/index.html",
+    "main.55ea44f0.css.map": "/id-code-helper/static/css/main.55ea44f0.css.map",
+    "main.420de2c7.js.map": "/id-code-helper/static/js/main.420de2c7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.55ea44f0.css",
+    "static/js/main.420de2c7.js"
+  ]
+}
