@@ -1,3 +1,5 @@
+To try the ID Code Helper, go to https://leahbutcher.github.io/id-code-helper/
+
 ## ID Code Helper
 
 A simple React, JS, CSS, and HTML project, ID Code Helper was made to simplify the process of creating ID numbers with JavaScript. Featuring a step-by-step walkthrough for designing an ID code template, it guides users toward creating a number system that can fit their needs. 
